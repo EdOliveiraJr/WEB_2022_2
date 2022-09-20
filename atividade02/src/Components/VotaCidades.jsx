@@ -46,7 +46,7 @@ const VotaCidades = ()=> {
         setQxd(0)
         setLim(0)
         setJN(0)
-        setApr(apurado=false)
+        setAprd(apurado=false)
     }
 
     return (
@@ -57,16 +57,26 @@ const VotaCidades = ()=> {
                 <h2>Juazeiro do Norte: {juazeiro}</h2>
             </div>
             <div>
-                <button onClick={contQxd}>Votar em Quixadá</button>
-                <button onClick={contLim}>Votar em Limoeiro do Norte</button>
-                <button onClick={contJN}>Votar em Juazeiro do Norte</button>
-                <button onClick={apurar}>Apurar</button>
-                <button onClick={reiniciar}>Reiniciar</button>
+                <div>
+                    <button type="button" class="btn btn-primary" onClick={contQxd}>Votar em Quixadá</button>
+                </div>
+                <div>
+                    <button onClick={contLim}>Votar em Limoeiro do Norte</button>
+                </div>
+                <div>
+                    <button onClick={contJN}>Votar em Juazeiro do Norte</button>
+                </div>
+                <div>
+                    <button onClick={apurar}>Apurar</button>
+                </div>
+                <div>
+                    <button onClick={reiniciar}>Reiniciar</button>
+                </div>
             </div>
             <div>
-                    {
-                        contab()        
-                    }
+                {
+                    contab()        
+                }
             </div>
         </div>
     )
