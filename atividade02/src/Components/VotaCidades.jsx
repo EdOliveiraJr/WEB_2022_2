@@ -56,21 +56,15 @@ const VotaCidades = ()=> {
                 <h2>Limoreiro do Norte: {limoeiro}</h2>
                 <h2>Juazeiro do Norte: {juazeiro}</h2>
             </div>
-            <div>
-                <div>
+            <div class="display-flex m-3 bd">
+                <div class="m-3" >
                     <button type="button" class="btn btn-primary" onClick={contQxd}>Votar em Quixadá</button>
+                    <button type="button" class="btn btn-primary" onClick={contLim}>Votar em Limoeiro do Norte</button>
+                    <button type="button" class="btn btn-primary" onClick={contJN}>Votar em Juazeiro do Norte</button>
                 </div>
                 <div>
-                    <button onClick={contLim}>Votar em Limoeiro do Norte</button>
-                </div>
-                <div>
-                    <button onClick={contJN}>Votar em Juazeiro do Norte</button>
-                </div>
-                <div>
-                    <button onClick={apurar}>Apurar</button>
-                </div>
-                <div>
-                    <button onClick={reiniciar}>Reiniciar</button>
+                    <button type="button" class="btn btn-primary" onClick={apurar}>Apurar</button>
+                    <button type="button" class="btn btn-primary" onClick={reiniciar}>Reiniciar</button>
                 </div>
             </div>
             <div>
