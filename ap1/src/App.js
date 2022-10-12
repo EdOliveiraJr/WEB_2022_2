@@ -8,6 +8,7 @@ import Questao01B from './components/Questao01B';
 import Questao03 from "./components/Questao03";
 import Questao02 from "./components/Questão02";
 import Questao04 from "./components/Questao04"
+import Questao05 from "./components/Questao05"
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
       <header className='App-reader m-4'>
         <h1>Desenvolvimento de Softare para Web - Avaliação Parcial 01 </h1>
       </header>
+      <hr/>
+
       <div className="m-4">
         <h2>Questão 01</h2>
         <Questao01>
@@ -22,20 +25,34 @@ function App() {
           <Questao01B></Questao01B>
         </Questao01>
       </div>
+      <hr/>
+
       <div className="m-4">
         <h2>Questão 02</h2>
         <Questao02></Questao02>
       </div>
+      <hr/>
+
       <div className="m-4">
         <h2>Questao 03</h2>
         <Questao03></Questao03>
-
       </div>
+      <hr/>
+
       <div className="m-4">
         <h2>Questao 04</h2>
         <Questao04></Questao04>
 
       </div>
+      <hr/>
+
+      <div className="m-4">
+        <h2>Questao 05</h2>
+        <Questao05></Questao05>
+
+      </div>
+      <hr/>
+
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>

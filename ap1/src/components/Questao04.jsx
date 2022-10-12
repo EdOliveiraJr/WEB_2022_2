@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const Questao04 = ()=>{
     const [paises, setPaises] = useState([])
+    //let pais = ''
 
     useEffect(
         ()=> {
@@ -11,15 +12,7 @@ const Questao04 = ()=>{
             .then(
                 (response)=>{
                     setPaises(response.data)
-                    let maisPopuloso = 0
-                    let pais = ''
-                    for (const element in response.data) {
-                        if(element.population > maisPopuloso) {
-                                maisPopuloso = element.population
-                                pais = element.name
-                        }
-                    }
-                    return pais
+                    console.log(response)
                 }
             )
             .catch(
@@ -31,16 +24,27 @@ const Questao04 = ()=>{
         []
     )
 
-    const listPaises = ()=> {
+    const paisMais = ()=> {
+        let pp = 0
+        let pn = ''
+        paises.forEach(element => {
+            if(element.population > pp){
+                pp = element.population
+                pn = element.name
+            }
+        });
+        return 'Pais mais populoso da Africa: ' + pn + ' - ' + pp + ' habitantes'
         
-     }
-
+    }
+    
 
     return(
         <div>
-            {
-                listPaises()
-            }
+            <h3>
+                {
+                    paisMais()
+                }
+            </h3>
             
         </div>
     )
