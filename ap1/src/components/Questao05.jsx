@@ -61,19 +61,21 @@ const Questao05 = ()=>{
         setParam('asia')
     }
 
+    const renderiza = ()=>{
+        if(param === 'asia')
+            return paisMenos()
+        else
+            return paisMais()
+    }
+
     return(
         <div>
             <h3>
                 {
-                    paisMais()
+                    renderiza()
                 }
             </h3>
-            <h3>
-                {
-                    paisMenos()
-                }
-            </h3>
-            <button className="btn btn-primary m-4" type="submit" onClick={america}>+ America</button>
+            <button className="btn btn-primary m-4" type="submit" onClick={america}>+ Americas</button>
             <button className="btn btn-primary m-4" type="submit" onClick={asia}>- Asia</button>
             
         </div>
