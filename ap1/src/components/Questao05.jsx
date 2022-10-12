@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import { useSearchParams } from "react-router-dom";
 
 
 const Questao05 = ()=>{
     const [paises, setPaises] = useState([])
-    const [searchParams, setSerchParams] = useSearchParams()
-    const africa = searchParams.get('africa')
+    const [param, setParam] = useState('africa')
+
+    const baseUrl = 'https://restcountries.com/v2/region/'
     
 
     useEffect(
         ()=> {
-            axios.get('https://restcountries.com/v2/region/'+africa+'?fields=name,population')
+            axios.get(baseUrl+param+'?fields=name,population')
             .then(
                 (response)=>{
                     setPaises(response.data)
@@ -24,7 +24,7 @@ const Questao05 = ()=>{
                 }
             )
         },
-        [africa]
+        [param]
     )
 
     const paisMais = ()=> {
@@ -54,11 +54,11 @@ const Questao05 = ()=>{
     }
 
     const america =()=>{
-        setSerchParams('america')
+        setParam('americas')
     }
 
     const asia = ()=> {
-        setSerchParams('asia')
+        setParam('asia')
     }
 
     return(
