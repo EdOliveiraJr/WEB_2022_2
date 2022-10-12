@@ -14,7 +14,9 @@ function App() {
   return (
     <div className="App m-4">
       <header className='App-reader m-4'>
+        <img className="m-4" src="https://www.quixada.ufc.br/wp-content/uploads/2017/10/logo.png"></img>
         <h1>Desenvolvimento de Softare para Web - Avaliação Parcial 01 </h1>
+        
       </header>
       <hr/>
 

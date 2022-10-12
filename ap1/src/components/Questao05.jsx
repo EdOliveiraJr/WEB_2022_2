@@ -4,14 +4,14 @@ import axios from 'axios';
 
 const Questao05 = ()=>{
     const [paises, setPaises] = useState([])
-    const [param, setParam] = useState('africa')
+    const [param, setParam] = useState('americas')
 
     const baseUrl = 'https://restcountries.com/v2/region/'
     
 
     useEffect(
         ()=> {
-            axios.get(baseUrl+param+'?fields=name,population')
+            axios.get(baseUrl + param +'?fields=name,population')
             .then(
                 (response)=>{
                     setPaises(response.data)
@@ -36,7 +36,7 @@ const Questao05 = ()=>{
                 pn = element.name
             }
         });
-        return  pn + ' - ' + pp
+        return  'O mais populoso das Américas é: ' + pn + ' - ' + pp + ' habitantes'
         
     }
     
@@ -49,7 +49,7 @@ const Questao05 = ()=>{
                 pn = element.name
             }
         });
-        return   pn + ' - ' + pp
+        return  'O menos populoso da Asia é: ' + pn + ' - ' + pp + ' habitantes'
         
     }
 
@@ -81,7 +81,5 @@ const Questao05 = ()=>{
         </div>
     )
 }
-
-   
 
 export default Questao05
