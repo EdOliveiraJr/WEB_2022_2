@@ -31,8 +31,8 @@ const Questao02 = ()=> {
     return (
         <div className="m-4">
             <form className="form-group" action="">
-                <div className="row">
-                    <div className="col">
+                <div className="row justify-content-center">
+                    <div className="col-1">
                         <input type="number" 
                                 className="form-control"
                                 placeholder="Número 1"
@@ -43,7 +43,7 @@ const Questao02 = ()=> {
                                 }
                         />
                     </div>
-                    <div className="col">
+                    <div className="col-1">
                         <input type="number" 
                                 className="form-control"
                                 placeholder="Número 2"
