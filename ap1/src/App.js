@@ -5,7 +5,9 @@ import './App.css';
 import Questao01 from './components/Questao01';
 import Questao01A from './components/Questao01A';
 import Questao01B from './components/Questao01B';
+import Questao03 from "./components/Questao03";
 import Questao02 from "./components/Questão02";
+import Questao04 from "./components/Questao04"
 
 function App() {
   return (
@@ -22,9 +24,17 @@ function App() {
       </div>
       <div className="m-4">
         <h2>Questão 02</h2>
-        <Questao02>
+        <Questao02></Questao02>
+      </div>
+      <div className="m-4">
+        <h2>Questao 03</h2>
+        <Questao03></Questao03>
 
-        </Questao02>
+      </div>
+      <div className="m-4">
+        <h2>Questao 04</h2>
+        <Questao04></Questao04>
+
       </div>
       {/* <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />

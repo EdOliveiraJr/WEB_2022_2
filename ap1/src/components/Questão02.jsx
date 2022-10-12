@@ -7,19 +7,19 @@ const Questao02 = ()=> {
     const [y, setY] = useState(0)   
     
     function soma() {
-        setRes(x + y)
+        setRes( parseInt(x) + parseInt(y))
     }
 
     function subtracao() {
-        return x - y
+        setRes( parseInt(x) - parseInt(y))
     }
 
-    function multiplicao() {
-        return x * y    
+    function multiplicacao() {
+        setRes( parseInt(x) * parseInt(y))    
     }
 
     function divisao() {
-        return x / y
+        setRes( parseFloat(x) / parseFloat(y))
     }
     
     const contab = ()=> {
@@ -33,9 +33,9 @@ const Questao02 = ()=> {
             <form className="form-group" action="">
                 <div className="row">
                     <div className="col">
-                        <label htmlFor="">Número 1</label>
                         <input type="number" 
                                 className="form-control"
+                                placeholder="Número 1"
                                 onChange={
                                     (event)=>{
                                         setX(event.target.valueAsNumber)
@@ -44,9 +44,9 @@ const Questao02 = ()=> {
                         />
                     </div>
                     <div className="col">
-                        <label htmlFor="">Número 2</label>
                         <input type="number" 
-                                className="form-control" 
+                                className="form-control"
+                                placeholder="Número 2"
                                 onChange={
                                     (event)=>{
                                         setY(event.target.valueAsNumber)
@@ -58,9 +58,9 @@ const Questao02 = ()=> {
             </form>
 
             <button className="btn btn-primary m-2" type="submit" onClick={soma}> + </button>
-            <button className="btn btn-primary m-2" type="submit"> - </button>
-            <button className="btn btn-primary m-2" type="submit"> * </button>
-            <button className="btn btn-primary m-2" type="submit"> / </button>
+            <button className="btn btn-primary m-2" type="submit" onClick={subtracao}> - </button>
+            <button className="btn btn-primary m-2" type="submit" onClick={multiplicacao}> * </button>
+            <button className="btn btn-primary m-2" type="submit" onClick={divisao}> / </button>
             <div>
                 {
                     contab()
