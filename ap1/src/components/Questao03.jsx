@@ -1,12 +1,11 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from 'axios';
-import { useSearchParams } from "react-router-dom";
 
 const Questao03 = ()=> {
     const [pokemons, setPokemons] = useState([])
-    const [searchParams, setSerchParams] = useSearchParams()
-    const offset = searchParams.get('offset') || 0
+    const [offset, setOffset] = useState(0)
+    
 
     useEffect(
         ()=>{
@@ -37,8 +36,8 @@ const Questao03 = ()=> {
         )
     }
 
-    const atualiza = ()=> {
-        setSerchParams({offset: offset/1 + 10})
+    const proximo = ()=> {
+        setOffset(offset+10)
     }
 
 
@@ -50,7 +49,7 @@ const Questao03 = ()=> {
                 }
             </div>
             <div>
-                <button className="btn btn-primary" type="submit" onClick={atualiza}>Next</button>
+                <button className="btn btn-primary" type="submit" onClick={proximo}>Próximo</button>
             </div>
             
             
