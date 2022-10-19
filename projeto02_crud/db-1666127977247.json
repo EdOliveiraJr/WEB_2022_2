@@ -1,6 +1,12 @@
 {
   "students": [
     {
+      "id": 1,
+      "name": "Jefferson",
+      "course": "SI",
+      "ira": "5.6"
+    },
+    {
       "id": 2,
       "name": "Joana",
       "course": "CC",
@@ -31,8 +37,8 @@
       "id": 6
     },
     {
-      "name": "maria",
-      "course": "cc",
+      "name": "Ed",
+      "course": "ES",
       "ira": "10",
       "id": 7
     }

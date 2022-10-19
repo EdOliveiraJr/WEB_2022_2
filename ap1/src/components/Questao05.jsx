@@ -53,7 +53,7 @@ const Questao05 = ()=>{
         
     }
 
-    const america =()=>{
+    const america = ()=>{
         setParam('americas')
     }
 

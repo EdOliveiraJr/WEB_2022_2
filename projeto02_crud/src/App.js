@@ -39,10 +39,12 @@ function App() {
                   <Link to='/createStudent' className='nav-link'>Criar Estudante</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="editStudent">Editar Estudante</a>
+                  {/* <a className="nav-link" href="editStudent">Editar Estudante</a> */}
+                  <Link to='/editStudent' className='nav-link'>Editar Estudante</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="listStudent">Listar Estudante</a>
+                  {/* <a className="nav-link" href="listStudent">Listar Estudante</a> */}
+                  <Link to='/listStudent' className='nav-link'>Listar Estudante</Link>
                 </li>
               </ul>
             </div>
@@ -58,10 +60,12 @@ function App() {
                   <Link to='/createTeatcher' className='nav-link'>Criar Professor</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="listTeatcher">Listar Professor</a>
+                  {/* <a className="nav-link" href="listTeatcher">Listar Professor</a> */}
+                  <Link to='/editTeatcher' className='nav-link'>Editar Professor</Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="editTeatcher">Editar Professor</a>
+                  {/* <a className="nav-link" href="editTeatcher">Editar Professor</a> */}
+                  <Link to='/listTeatcher' className='nav-link'>Listar Professor</Link>
                 </li>
               </ul>
             </div>
@@ -74,7 +78,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="createStudent" element={<CreateStudent/>}/>
         <Route path="listStudent" element={<ListStudent/>}/>
-        <Route path="editStudent" element={<EditStudent/>}/>
+        <Route path="editStudent/:id" element={<EditStudent/>}/>
         <Route path="createTeatcher" element={<CreateTeatcher/>}/>
         <Route path="listTeatcher" element={<ListTeatcher/>}/>
         <Route path="editTeatcher" element={<EditTeatcher/>}/>
