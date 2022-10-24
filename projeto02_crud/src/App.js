@@ -39,10 +39,6 @@ function App() {
                   <Link to='/createStudent' className='nav-link'>Criar Estudante</Link>
                 </li>
                 <li className="nav-item">
-                  {/* <a className="nav-link" href="editStudent">Editar Estudante</a> */}
-                  <Link to='/editStudent' className='nav-link'>Editar Estudante</Link>
-                </li>
-                <li className="nav-item">
                   {/* <a className="nav-link" href="listStudent">Listar Estudante</a> */}
                   <Link to='/listStudent' className='nav-link'>Listar Estudante</Link>
                 </li>
@@ -58,10 +54,6 @@ function App() {
                 <li className="nav-item">
                   {/* <a class="nav-link" href="createStudent">Criar Estudante</a> */}
                   <Link to='/createTeatcher' className='nav-link'>Criar Professor</Link>
-                </li>
-                <li className="nav-item">
-                  {/* <a className="nav-link" href="listTeatcher">Listar Professor</a> */}
-                  <Link to='/editTeatcher' className='nav-link'>Editar Professor</Link>
                 </li>
                 <li className="nav-item">
                   {/* <a className="nav-link" href="editTeatcher">Editar Professor</a> */}
@@ -81,7 +73,7 @@ function App() {
         <Route path="editStudent/:id" element={<EditStudent/>}/>
         <Route path="createTeatcher" element={<CreateTeatcher/>}/>
         <Route path="listTeatcher" element={<ListTeatcher/>}/>
-        <Route path="editTeatcher" element={<EditTeatcher/>}/>
+        <Route path="editTeatcher/:id" element={<EditTeatcher/>}/>
       </Routes>
     </div>
   );

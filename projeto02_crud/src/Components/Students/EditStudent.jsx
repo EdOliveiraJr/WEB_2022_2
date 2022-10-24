@@ -14,7 +14,7 @@ const EditStudent = ()=> {
 
     useEffect(
         ()=> {
-            axios.get('http://localhost:3001/students/' + params.id)
+            axios.get('http://localhost:3001/student/' + params.id)
             .then(
                 (response)=>{
                     console.log(response.data.id)
@@ -28,10 +28,11 @@ const EditStudent = ()=> {
         []
     )
 
+
     const handleSubmit = (event)=>{
         event.preventDefault()
         const studentUpdate = {name,course,ira}
-        axios.put('http://localhost:3001/students/'+ params.id, studentUpdate)
+        axios.put('http://localhost:3001/student/'+ params.id, studentUpdate)
         .then(
             (response)=>{
                 navigate('/listStudent')

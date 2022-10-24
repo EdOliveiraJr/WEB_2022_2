@@ -8,7 +8,7 @@ const ListStudent = ()=> {
 
     useEffect (
         ()=>{
-            axios.get('http://localhost:3001/students')
+            axios.get('http://localhost:3001/student')
             .then(
                 (response)=>{
                     //console.log(response)
@@ -26,10 +26,15 @@ const ListStudent = ()=> {
         
     )
 
-    function deleteStudent(id){
-        if(window.confirm('Deseja excluir')){
-            axios.delete('http://localhost:3001/students/'+ id)
-            .then(()=>console.log('ok'))
+    function deleteStudent(id) {
+        if(window.confirm('Deseja excluit?')){
+            axios.delete('http://localhost:3001/student/' + id)
+            .then(
+                ()=>{
+                    let result = students.filter((student)=>student.id !== id)
+                    setStudents(result)
+                }
+            )
             .catch(error=>console.log(error))
         }
     }

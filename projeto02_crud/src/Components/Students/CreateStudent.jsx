@@ -15,7 +15,7 @@ const CreateStudent = ()=> {
         // console.log(ira)
 
         const newStudent = {name,course,ira}
-        axios.post('http://localhost:3001/students', newStudent)
+        axios.post('http://localhost:3001/student', newStudent)
         .then(
             (response)=>{
                 console.log(response.data.id)

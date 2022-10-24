@@ -1,11 +1,5 @@
 {
-  "students": [
-    {
-      "id": 2,
-      "name": "Joana",
-      "course": "CC",
-      "ira": "9.6"
-    },
+  "student": [
     {
       "id": 3,
       "name": "Pedro",
@@ -37,7 +31,7 @@
       "id": 7
     }
   ],
-  "teatchers": [
+  "teatcher": [
     {
       "id": 1,
       "name": "Jefferson",
