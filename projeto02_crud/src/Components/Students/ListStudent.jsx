@@ -3,23 +3,40 @@ import { useState, useEffect } from "react"
 import axios from 'axios'
 import {Link} from 'react-router-dom'
 
-const ListStudent = ()=> {
+import FirebaseContext from "../../utils/FirebaseContext"
+import StudentService from "../../services/StudentService"
+
+const ListStudentPage = ()=> {
+    return (
+        <FirebaseContext.Consumer>
+            {value => <ListStudent firebase={value}/>}
+        </FirebaseContext.Consumer>
+    )
+}
+
+const ListStudent = ({firebase})=> {
     const [students, setStudents] = useState([])
 
     useEffect (
         ()=>{
-            axios.get('http://localhost:3001/student')
-            .then(
-                (response)=>{
-                    //console.log(response)
-                    setStudents(response.data)
+            StudentService.list(firebase.getFirestoreDb(),
+                (students)=> {
+                    console.log(students)
+                    setStudents(students)
                 }
             )
-            .catch(
-                (error)=>{
-                    console.log(error)
-                }
-            )
+            // axios.get('http://localhost:3001/student')
+            // .then(
+            //     (response)=>{
+            //         //console.log(response)
+            //         setStudents(response.data)
+            //     }
+            // )
+            // .catch(
+            //     (error)=>{
+            //         console.log(error)
+            //     }
+            // )
         }
         ,
         []
@@ -82,4 +99,4 @@ const ListStudent = ()=> {
     )
 }
 
-export default ListStudent
+export default ListStudentPage
