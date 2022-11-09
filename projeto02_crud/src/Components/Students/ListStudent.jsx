@@ -107,8 +107,8 @@ const ListStudent = ({firebase})=> {
     }
 
     return (
-        <div>
-            <h1>Listar estudante</h1>
+        <div style={{marginTop:20}}>
+            <h2>Listar Estudante</h2>
             <table className="table table-striped">
                 <thead>
                     <tr>

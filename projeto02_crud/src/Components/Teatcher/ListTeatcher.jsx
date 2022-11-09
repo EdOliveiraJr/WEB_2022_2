@@ -107,8 +107,8 @@ const ListTeatcher = ({firebase})=> {
     }
 
     return (
-        <div>
-            <h1>Listar Professor</h1>
+        <div style={{marginTop:20}}>
+            <h2>Listar Professor</h2>
             <table className="table table-striped">
                 <thead>
                     <tr>

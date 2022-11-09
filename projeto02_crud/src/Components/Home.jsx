@@ -10,8 +10,9 @@ const Home = ()=>{
             </div>
 
             <div className="d-flex justify-content-center m-4">
-                <h2>SCAP - Sistema de Cadastro para Alunos e Professores</h2>
+                <h2>SCAP - Sistema de Cadastro de Alunos e Professores</h2>
             </div>
+            <img src="../../public/house-fill.svg" alt="" />
         </div>
     )
 }

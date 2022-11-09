@@ -3,6 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 
+import home from "bootstrap-icons/icons/house.svg"
+
 import CreateStudent from "./Components/Students/CreateStudent";
 import EditStudent from "./Components/Students/EditStudent";
 import ListStudent from "./Components/Students/ListStudent";
@@ -16,10 +18,11 @@ function App() {
   return (
     <div className="container">
       <nav className="navbar navbar-expand-lg">
-        <i class="bi bi-house"></i>
-        <Link to={'/'} className="navbar-brand" style={{paddingLeft:10}}>
-          
+        
+        <Link to={'/'} className="navbar-brand" style={{paddingLeft:10}}> 
+          <img src={home} width="32"></img>
         </Link>
+      
         <a className="navbar-brand" href="#"></a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
