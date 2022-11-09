@@ -1,8 +1,21 @@
 import { useState } from "react"
-import axios from 'axios'
+//import axios from 'axios'
 import { useNavigate } from "react-router-dom"
 
-const CreateStudent = ()=> {
+import FirebaseContext from "../../utils/FirebaseContext"
+import StudentService from "../../services/StudentService"
+
+const CreateStudentPage = ()=> {
+    return (
+        <FirebaseContext.Consumer>
+            {value => <CreateStudent firebase={value}/>}
+        </FirebaseContext.Consumer>
+    )
+}
+
+
+
+const CreateStudent = ({firebase})=> {
     const [name,setName] = useState('')
     const [course, setCourse] = useState('')
     const [ira, setIra] = useState(0.0)
@@ -15,14 +28,23 @@ const CreateStudent = ()=> {
         // console.log(ira)
 
         const newStudent = {name,course,ira}
-        axios.post('http://localhost:3001/student', newStudent)
-        .then(
-            (response)=>{
-                console.log(response.data.id)
-                navigate("/listStudent")
-            }
+
+        StudentService.add(
+            firebase.getFirestoreDb(),
+            (id)=>{
+                alert(`Estudante ${id} adicionado!`)
+                navigate('/listStudent')
+            },
+            newStudent
         )
-        .catch(error => console.log(error))
+        // axios.post('http://localhost:3001/student', newStudent)
+        // .then(
+        //     (response)=>{
+        //         console.log(response.data.id)
+        //         navigate("/listStudent")
+        //     }
+        // )
+        // .catch(error => console.log(error))
     }
 
     return (
@@ -81,4 +103,4 @@ const CreateStudent = ()=> {
     )
 }
 
-export default CreateStudent
+export default CreateStudentPage

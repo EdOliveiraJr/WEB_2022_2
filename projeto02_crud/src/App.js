@@ -16,17 +16,16 @@ function App() {
   return (
     <div className="container">
       <nav className="navbar navbar-expand-lg">
-        <Link to={'/'} className="navbar-brand" style={{paddingLeft:10}}>CRUD</Link>
+        <i class="bi bi-house"></i>
+        <Link to={'/'} className="navbar-brand" style={{paddingLeft:10}}>
+          
+        </Link>
         <a className="navbar-brand" href="#"></a>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
-                <li className="nav-item active">
-                  {/* <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a> */}
-                  <Link to='/' className="nav-link">Home</Link>
-                </li>
             <div className="dropdown m-1">
               <a className="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Estudante

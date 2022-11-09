@@ -2,7 +2,18 @@ import { useParams, useNavigate } from "react-router-dom"
 import { useState, useEffect } from "react"
 import axios from 'axios'
 
-const EditStudent = ()=> {
+import FirebaseContext from "../../utils/FirebaseContext"
+import StudentService from "../../services/StudentService"
+
+const EditStudentPage = ()=> {
+    return (
+        <FirebaseContext.Consumer>
+            {value => <EditStudent firebase={value}/>}
+        </FirebaseContext.Consumer>
+    )
+}
+
+const EditStudent = ({firebase})=> {
     
     const [name,setName] = useState('') //useState monitora as mudanças da variáveis
     const [course, setCourse] = useState('')
@@ -14,16 +25,24 @@ const EditStudent = ()=> {
 
     useEffect(
         ()=> {
-            axios.get('http://localhost:3001/student/' + params.id)
-            .then(
-                (response)=>{
-                    console.log(response.data.id)
-                    setName(response.data.name)
-                    setCourse(response.data.course)
-                    setIra(response.data.ira)
-                }
+            StudentService.retrieve(firebase.getFirestoreDb(),
+                (student)=>{
+                    setName(student.name)
+                    setCourse(student.course)
+                    setIra(student.ira)
+                },
+                params.id
             )
-            .catch(error => console.log(error))
+            // axios.get('http://localhost:3001/student/' + params.id)
+            // .then(
+            //     (response)=>{
+            //         console.log(response.data.id)
+            //         setName(response.data.name)
+            //         setCourse(response.data.course)
+            //         setIra(response.data.ira)
+            //     }
+            // )
+            // .catch(error => console.log(error))
         },
         []
     )
@@ -32,13 +51,23 @@ const EditStudent = ()=> {
     const handleSubmit = (event)=>{
         event.preventDefault()
         const studentUpdate = {name,course,ira}
-        axios.put('http://localhost:3001/student/'+ params.id, studentUpdate)
-        .then(
-            (response)=>{
+
+        StudentService.update(
+            firebase.getFirestoreDb(),
+            (result)=>{
+                alert('Estudante atualizado!')
                 navigate('/listStudent')
-            }
+            },
+            params.id,
+            studentUpdate
         )
-        .catch(error => console.log(error))
+        // axios.put('http://localhost:3001/student/'+ params.id, studentUpdate)
+        // .then(
+        //     (response)=>{
+        //         navigate('/listStudent')
+        //     }
+        // )
+        // .catch(error => console.log(error))
         
     }
 
@@ -101,4 +130,4 @@ const EditStudent = ()=> {
     )
 }
 
-export default EditStudent
+export default EditStudentPage

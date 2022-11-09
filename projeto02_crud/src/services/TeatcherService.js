@@ -1,47 +1,47 @@
 import {collection, getDocs, addDoc, deleteDoc, updateDoc, doc, getDoc, query, onSnapshot} from 'firebase/firestore'
 
-class StudentService {
+class TeatcherService {
     static list = (firestoreDb,callback)=> {
-        getDocs(collection(firestoreDb,'student'))
+        getDocs(collection(firestoreDb,'teatcher'))
         .then(
-            (studentSnapshot)=>{
-                const students = []
-                studentSnapshot.forEach(
-                    (student)=>{
-                        // console.log(student.id)
-                        // console.log(name+" "+course+" "+ira)
+            (teatcherSnapshot)=>{
+                const teatchers = []
+                teatcherSnapshot.forEach(
+                    (teatcher)=>{
+                        // console.log(Teatcher.id)
+                        // console.log(name+" "+course+" "+salary)
 
-                        const id = student.id
-                        const {name,course,ira} = student.data()
-                        students.push({id,name,course,ira})
+                        const id = teatcher.id
+                        const {name,course,salary} = teatcher.data()
+                        teatchers.push({id,name,course,salary})
                     }
                 )
-                callback(students)
+                callback(teatchers)
             }
         )
         .catch(error=>console.log(error))
     }
 
     static listOnSnapshot = (firestoreDb,callback)=> {
-        const q = query(collection(firestoreDb,'student'))
+        const q = query(collection(firestoreDb,'teatcher'))
         const unscribe = onSnapshot(
             q,
             (querySnapshot)=>{
-                const students = []
+                const teatchers = []
                 querySnapshot.forEach(
                     (doc)=>{
                         const id = doc.id
-                        const {name,course,ira} = doc.data()
-                        students.push({id,name,course,ira})
+                        const {name,course,salary} = doc.data()
+                        teatchers.push({id,name,course,salary})
                     }
                 )
-                callback(students)
+                callback(teatchers)
             }
         )
     }
 
-    static add = (firestoreDb,callback,student) => {
-        addDoc(collection(firestoreDb,'student'),student)
+    static add = (firestoreDb,callback,teatcher) => {
+        addDoc(collection(firestoreDb,'teatcher'),teatcher)
         .then(
             (docRef)=>{
                 callback(docRef.id)
@@ -51,7 +51,7 @@ class StudentService {
     }
 
     static retrieve = (firestoreDb, callback,id)=> {
-        getDoc(doc(firestoreDb,'student',id))
+        getDoc(doc(firestoreDb,'teatcher',id))
         .then(
             (docSnap)=>{
                 if(docSnap.exists()){
@@ -63,8 +63,8 @@ class StudentService {
         .catch(error=>console.log(error))
     }
 
-    static update = (firestoreDb, callback, id, student)=> {
-        updateDoc(doc(firestoreDb, 'student', id), student)
+    static update = (firestoreDb, callback, id, teatcher)=> {
+        updateDoc(doc(firestoreDb, 'teatcher', id), teatcher)
         .then(
             ()=>{
                 callback(true)
@@ -75,7 +75,7 @@ class StudentService {
     }
 
     static delete = (firestoreDb,callback,id)=> {
-        deleteDoc(doc(firestoreDb,'student',id))
+        deleteDoc(doc(firestoreDb,'teatcher',id))
         .then(
             ()=>{
                 callback(true)
@@ -85,4 +85,4 @@ class StudentService {
     }
 }
 
-export default StudentService
+export default TeatcherService

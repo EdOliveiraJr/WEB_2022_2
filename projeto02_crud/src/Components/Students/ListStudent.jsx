@@ -19,9 +19,10 @@ const ListStudent = ({firebase})=> {
 
     useEffect (
         ()=>{
-            StudentService.list(firebase.getFirestoreDb(),
+            StudentService.listOnSnapshot(
+                firebase.getFirestoreDb(),
                 (students)=> {
-                    console.log(students)
+                    // console.log(students)
                     setStudents(students)
                 }
             )
@@ -43,16 +44,44 @@ const ListStudent = ({firebase})=> {
         
     )
 
-    function deleteStudent(id) {
-        if(window.confirm('Deseja excluit?')){
-            axios.delete('http://localhost:3001/student/' + id)
-            .then(
+    function deleteStudentV2(id) {
+        if(window.confirm('Deseja excluir?')){
+            StudentService.delete(firebase.getFirestoreDb(),
                 ()=>{
-                    let result = students.filter((student)=>student.id !== id)
-                    setStudents(result)
-                }
+                    let studentsTemp = students
+                        for(let i = 0; i < studentsTemp.length; i++)
+                        if(studentsTemp[i].id === id){
+                            studentsTemp.splice(i,1)
+                            break
+                    }
+                    setStudents(studentsTemp)
+                },
+                id
             )
-            .catch(error=>console.log(error))
+        }
+    }
+
+    function deleteStudent(id) {
+        if(window.confirm('Deseja excluir?')){
+            StudentService.delete(firebase.getFirestoreDb(),
+                ()=>{
+                    let studentsResult = students.filter(
+                        (student)=> student.id !== id
+                    )
+                    setStudents(studentsResult)
+                },
+                id
+            )
+            // axios.delete('http://localhost:3001/student/' + id)
+            // .then(
+            //     ()=>{
+            //         let result = students.filter(
+                            // (student)=>student.id !== id
+                            // )
+            //         setStudents(result)
+            //     }
+            // )
+            // .catch(error=>console.log(error))
         }
     }
 
