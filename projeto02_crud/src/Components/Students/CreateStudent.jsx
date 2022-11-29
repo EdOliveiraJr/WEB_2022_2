@@ -51,7 +51,7 @@ const CreateStudent = ({firebase})=> {
         <div style={{marginTop:20}}>
             <h2>Criar Estudante</h2>
             <form onSubmit={handleSubmit}>
-                <div className='form-group'>
+                <div className='col-5 form-group'>
                     <label>Nome: </label>
                     <input 
                         type='text'
@@ -64,7 +64,7 @@ const CreateStudent = ({firebase})=> {
                         }
                     />
                 </div>
-                <div className='form-group'>
+                <div className='col-5 form-group'>
                     <label>Curso: </label>
                     <input 
                         type='text'
@@ -77,7 +77,7 @@ const CreateStudent = ({firebase})=> {
                         }
                     />
                 </div>
-                <div className='form-group'>
+                <div className='col-5 form-group'>
                     <label>IRA: </label>
                     <input 
                         type='number'

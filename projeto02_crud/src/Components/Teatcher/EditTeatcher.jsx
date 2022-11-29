@@ -75,7 +75,7 @@ const EditTeatcher = ({firebase})=> {
         <div style={{marginTop:20}}>
             <h2>Editar Professor</h2>
             <form onSubmit={handleSubmit}>
-                <div className='form-group'>
+                <div className='col-5 form-group'>
                     <label>Nome: </label>
                     <input 
                         type='text'
@@ -89,7 +89,7 @@ const EditTeatcher = ({firebase})=> {
                         }
                     />
                 </div>
-                <div className='form-group'>
+                <div className='col-5 form-group'>
                     <label>Curso: </label>
                     <input 
                         type='text'
@@ -103,8 +103,8 @@ const EditTeatcher = ({firebase})=> {
                         }
                     />
                 </div>
-                <div className='form-group'>
-                    <label>salary: </label>
+                <div className='col-5 form-group'>
+                    <label>Salário: </label>
                     <input 
                         type='number'
                         step='any'

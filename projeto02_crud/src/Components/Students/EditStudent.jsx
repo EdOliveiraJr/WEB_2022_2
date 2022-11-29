@@ -75,7 +75,7 @@ const EditStudent = ({firebase})=> {
         <div style={{marginTop:20}}>
             <h2>Editar Estudante</h2>
             <form onSubmit={handleSubmit}>
-                <div className='form-group'>
+                <div className='col-5 form-group'>
                     <label>Nome: </label>
                     <input 
                         type='text'
@@ -89,7 +89,7 @@ const EditStudent = ({firebase})=> {
                         }
                     />
                 </div>
-                <div className='form-group'>
+                <div className='col-5 form-group'>
                     <label>Curso: </label>
                     <input 
                         type='text'
@@ -103,7 +103,7 @@ const EditStudent = ({firebase})=> {
                         }
                     />
                 </div>
-                <div className='form-group'>
+                <div className='col-5 form-group'>
                     <label>IRA: </label>
                     <input 
                         type='number'

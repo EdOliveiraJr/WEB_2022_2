@@ -13,6 +13,8 @@ import CreateTeatcher from "./Components/Teatcher/CreateTeatcher";
 import EditTeatcher from "./Components/Teatcher/EditTeatcher";
 import ListTeatcher from "./Components/Teatcher/ListTeatcher";
 import {Routes, Route, Link} from 'react-router-dom' 
+import SignInUserPage from "./Components/Users/SignInUser";
+import SignUpUserPage from "./Components/Users/SignUpUser";
 
 function App() {
   return (
@@ -69,13 +71,14 @@ function App() {
         </div>
       </nav>
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<SignUpUserPage/>}/>
         <Route path="createStudent" element={<CreateStudent/>}/>
         <Route path="listStudent" element={<ListStudent/>}/>
         <Route path="editStudent/:id" element={<EditStudent/>}/>
         <Route path="createTeatcher" element={<CreateTeatcher/>}/>
         <Route path="listTeatcher" element={<ListTeatcher/>}/>
         <Route path="editTeatcher/:id" element={<EditTeatcher/>}/>
+        <Route path="login" element={<SignInUserPage/>}/>
       </Routes>
     </div>
   );
